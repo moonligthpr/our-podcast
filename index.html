@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Screen Sharing and Control</title>
+    <title>Screen Control and Share</title>
 </head>
 <body>
-    <h1>Screen Sharing and Control</h1>
-    <button id="startButton">Start Screen Sharing</button>
-    <button id="stopButton">Stop Screen Sharing</button>
-    <div id="remoteScreen"></div>
-    
-    <script src="script.js"></script>
+    <h1>Screen Control and Share</h1>
+    <div id="local-screen">
+        <video id="local-video" autoplay playsinline></video>
+    </div>
+    <div id="remote-screen">
+        <video id="remote-video" autoplay playsinline></video>
+    </div>
+    <div id="control-panel">
+        <!-- Add controls for screen sharing and control here -->
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>
