@@ -1,59 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Screen Sharing App</title>
+    <title>Screen Sharing and Control</title>
 </head>
 <body>
-  <h1>Screen Sharing App</h1>
-  <div id="localVideoContainer">
-    <video id="localVideo" autoplay playsinline style="width: 50%;"></video>
-  </div>
-  <div id="remoteVideoContainer">
-    <video id="remoteVideo" autoplay playsinline style="width: 50%;"></video>
-  </div>
-  <button id="startButton">Start Sharing</button>
-  <button id="stopButton">Stop Sharing</button>
-
-  <script>
-    let localStream;
-    let remoteStream;
-
-    const localVideo = document.getElementById("localVideo");
-    const remoteVideo = document.getElementById("remoteVideo");
-    const startButton = document.getElementById("startButton");
-    const stopButton = document.getElementById("stopButton");
-
-    startButton.addEventListener("click", startScreenSharing);
-    stopButton.addEventListener("click", stopScreenSharing);
-
-    async function startScreenSharing() {
-      try {
-        localStream = await navigator.mediaDevices.getDisplayMedia({ video: true });
-        localVideo.srcObject = localStream;
-        
-        // In a real application, you would send the localStream to a remote user using WebRTC.
-
-        // For this simplified example, we'll simulate the remote stream with a clone of the local stream.
-        remoteStream = localStream.clone();
-        remoteVideo.srcObject = remoteStream;
-        
-        startButton.disabled = true;
-        stopButton.disabled = false;
-      } catch (error) {
-        console.error("Error accessing screen sharing:", error);
-      }
-    }
-
-    function stopScreenSharing() {
-      if (localStream) {
-        const tracks = localStream.getTracks();
-        tracks.forEach((track) => track.stop());
-        localVideo.srcObject = null;
-        remoteVideo.srcObject = null;
-        startButton.disabled = false;
-        stopButton.disabled = true;
-      }
-    }
-  </script>
+    <h1>Screen Sharing and Control</h1>
+    <button id="startButton">Start Screen Sharing</button>
+    <button id="stopButton">Stop Screen Sharing</button>
+    <div id="remoteScreen"></div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
