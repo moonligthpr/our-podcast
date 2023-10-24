@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Screen Control and Share</title>
+    <title>Basic DJ App</title>
 </head>
 <body>
-    <h1>Screen Control and Share</h1>
-    <div id="local-screen">
-        <video id="local-video" autoplay playsinline></video>
-    </div>
-    <div id="remote-screen">
-        <video id="remote-video" autoplay playsinline></video>
-    </div>
-    <div id="control-panel">
-        <!-- Add controls for screen sharing and control here -->
-    </div>
-    <script src="app.js"></script>
+    <h1>Basic DJ App</h1>
+    <label for="track1">Track 1:</label>
+    <input type="file" id="track1" accept=".mp3, .wav">
+    <label for="track2">Track 2:</label>
+    <input type="file" id="track2" accept=".mp3, .wav">
+    <button id="playTrack1">Play Track 1</button>
+    <button id="playTrack2">Play Track 2</button>
+    <button id="stopTrack1">Stop Track 1</button>
+    <button id="stopTrack2">Stop Track 2</button>
 </body>
+<script src="app.js"></script>
 </html>
+
